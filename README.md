@@ -1,7 +1,8 @@
-# ReflectInsight-Extensions-Log4Net
+# reflectInsight-extensions-log4net
 
 [![Build status](https://img.shields.io/appveyor/ci/reflectsoftware/reflectinsight-extensions-log4net.svg)](https://ci.appveyor.com/project/reflectsoftware/reflectinsight-extensions-log4net)
 [![Release](https://img.shields.io/github/release/reflectsoftware/reflectinsight-extensions-log4net.svg)](https://github.com/reflectsoftware/reflectinsight-extensions-log4net/releases/latest)
+[![NuGet Version](http://img.shields.io/nuget/v/reflectsoftware.insight.extensions.log4net.svg?style=flat)](http://www.nuget.org/packages/ReflectSoftware.Insight.Extensions.Log4Net/)
 [![NuGet](https://img.shields.io/nuget/dt/reflectsoftware.insight.extensions.log4net.svg)](http://www.nuget.org/packages/ReflectSoftware.Insight.Extensions.Log4net/)
 [![Stars](https://img.shields.io/github/stars/reflectsoftware/reflectinsight-extensions-log4net.svg)](https://github.com/reflectsoftware/reflectinsight-extensions-log4net/stargazers)
 
