@@ -30,12 +30,28 @@ Then in your app.config or web.config file, add the following configuration sect
   <configSections>
     <section name="insightSettings" type="ReflectSoftware.Insight.ConfigurationHandler,ReflectSoftware.Insight" />
     <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
-	</configSections>
+  </configSections>
 
-  <!-- Logging Configuration 
-       Please make sure you update the Insight.config file property 'Copy to Output Directory' to 'Copy always'.
-       For more information on ReflectInsight and configuration help, visit http://reflectsoftware.com. -->
-  <insightSettings externalConfigSource="ReflectInsight.config" />
+  <insightSettings>
+    <baseSettings>
+      <configChange enabled="true" />
+      <propagateException enabled="false" />
+      <exceptionEventTracker time="20" />
+      <debugMessageProcess enabled="true" />
+    </baseSettings>
+
+    <listenerGroups active="Debug">
+      <group name="Debug" enabled="true" maskIdentities="false">
+        <destinations>
+          <destination name="Viewer" enabled="true" filter="" details="Viewer" />
+        </destinations>
+      </group>
+    </listenerGroups>
+
+    <logManager>
+      <instance name="log4netInstance1" category="Log4net1" />
+    </logManager>
+  </insightSettings>
 
   <log4net debug="false">
     <appender name="MyLogAppender1" type="ReflectSoftware.Insight.Extensions.Log4net.LogAppender, ReflectSoftware.Insight.Extensions.Log4net">
