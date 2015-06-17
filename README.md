@@ -18,7 +18,44 @@ The benefits to using the Insight Extensions is that you can easily and quickly 
 
 ## Getting Started
 
-Coming soon...
+```powershell
+Install-Package ReflectSoftware.Insight.Extensions.Log4Net
+```
+
+Then in your app.config or web.config file, add the following configuration sections:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="insightSettings" type="ReflectSoftware.Insight.ConfigurationHandler,ReflectSoftware.Insight" />
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
+	</configSections>
+
+  <!-- Logging Configuration 
+       Please make sure you update the Insight.config file property 'Copy to Output Directory' to 'Copy always'.
+       For more information on ReflectInsight and configuration help, visit http://reflectsoftware.com. -->
+  <insightSettings externalConfigSource="ReflectInsight.config" />
+
+  <log4net debug="false">
+    <appender name="MyLogAppender1" type="ReflectSoftware.Insight.Extensions.Log4net.LogAppender, ReflectSoftware.Insight.Extensions.Log4net">
+      <param name="InstanceName" value="log4netInstance1" />
+      <param name="DisplayLevel" value="true" />
+      <param name="DisplayLocation" value="true" />
+    </appender>
+
+    <root>
+      <appender-ref ref="MyLogAppender1" />
+    </root>
+  </log4net>
+    
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0" />
+  </startup>
+</configuration>
+```
+
+Additional configuration details for the ReflectSoftware.Insight.Extensions.Log4Net logging extension can be found [here](https://reflectsoftware.atlassian.net/wiki/display/RI5/Log4net+Extension).
 
 ## Additional Resources
 
