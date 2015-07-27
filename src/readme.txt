@@ -4,6 +4,9 @@ VERSION 5.4
 
 RELEASE NOTES
 
+Version 5.5.1
+- Added auto save log file by file size
+
 Version 5.4.0
 - Added auto save log file by file size
 - Added support for overloading ConfigurationMode to avoid a local configuration file
