@@ -34,9 +34,9 @@ For help on configuration, please see our documentation on the website (https://
         </references>
     </metadata>
     <files>
-        <file src="..\Build\Libraries\net20\ReflectSoftware.Insight.Extensions.Log4net.dll" target="lib\net20\ReflectSoftware.Insight.Extensions.Log4net.dll" />
-        <file src="..\Build\Libraries\net40\ReflectSoftware.Insight.Extensions.Log4net.dll" target="lib\net40\ReflectSoftware.Insight.Extensions.Log4net.dll" />
-        <file src="..\Build\Libraries\net45\ReflectSoftware.Insight.Extensions.Log4net.dll" target="lib\net45\ReflectSoftware.Insight.Extensions.Log4net.dll" />
+        <file src="bin\release\net20\ReflectSoftware.Insight.Extensions.Log4net.dll" target="lib\net20\ReflectSoftware.Insight.Extensions.Log4net.dll" />
+        <file src="bin\release\net40\ReflectSoftware.Insight.Extensions.Log4net.dll" target="lib\net40\ReflectSoftware.Insight.Extensions.Log4net.dll" />
+        <file src="bin\release\net45\ReflectSoftware.Insight.Extensions.Log4net.dll" target="lib\net45\ReflectSoftware.Insight.Extensions.Log4net.dll" />
         <file src="readme.txt" target="readme.txt" />
     </files>
 </package>
