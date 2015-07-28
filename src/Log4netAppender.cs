@@ -2,7 +2,7 @@
 *
 * Copyright (c) ReflectSoftware, Inc. All rights reserved. 
 *
-* See License.rtf in the solution root for license information.
+* See License.md in the solution root for license information.
 *
 ******************************************************************************/
 using System;
