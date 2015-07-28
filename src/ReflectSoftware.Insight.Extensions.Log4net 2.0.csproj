@@ -72,9 +72,8 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net35\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ReflectSoftware.Insight, Version=5.5.0.1500, Culture=neutral, PublicKeyToken=c78ddbdaf1f32b08, processorArchitecture=MSIL">
+    <Reference Include="ReflectSoftware.Insight">
       <HintPath>..\packages\ReflectSoftware.Insight.5.5.0\lib\net20\ReflectSoftware.Insight.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
