@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>ReflectSoftware.Insight.Extensions.Log4net</id>
-        <version>5.5.1</version>
+        <version>5.5.2</version>
         <title>ReflectSoftware.Insight.Extensions.Log4net</title>
         <authors>ReflectSoftware Inc.</authors>
         <owners>ReflectSoftware Inc.</owners>
@@ -27,7 +27,7 @@ For help on configuration, please see our documentation on the website (https://
         <tags>Log4net Logging Extensions ReflectInsight Appender Log Tracing RabbitMQ</tags>
         <dependencies>
             <dependency id="log4net" version="2.0.3" />
-            <dependency id="ReflectSoftware.Insight" version="5.5.0" />
+            <dependency id="ReflectSoftware.Insight" version="5.5.1" />
         </dependencies>
         <references>
             <reference file="ReflectSoftware.Insight.Extensions.Log4net.dll" />

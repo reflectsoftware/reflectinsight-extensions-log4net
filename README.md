@@ -71,7 +71,7 @@ Then in your app.config or web.config file, add the following configuration sect
 </configuration>
 ```
 
-Additional configuration details for the ReflectSoftware.Insight.Extensions.Log4Net logging extension can be found [here](https://reflectsoftware.atlassian.net/wiki/display/RI5/Log4net+Extension).
+Additional configuration details for the **ReflectSoftware.Insight.Extensions.Log4Net** logging extension can be found in our [documentation](https://reflectsoftware.atlassian.net/wiki/display/RI5/Log4net+Extension).
 
 ## Additional Resources
 
@@ -82,3 +82,5 @@ Additional configuration details for the ReflectSoftware.Insight.Extensions.Log4
 [Submit User Feedback](http://reflectsoftware.uservoice.com/forums/158277-reflectinsight-feedback)
 
 [Contact Support](support@reflectsoftware.com)
+
+[ReflectSoftware Website](http://reflectsoftware.com)
