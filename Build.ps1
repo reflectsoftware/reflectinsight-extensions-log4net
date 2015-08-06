@@ -39,7 +39,6 @@ function Invoke-NuGetPackProj($csproj)
 
 function Invoke-NuGetPackSpec($nuspec, $version)
 {
-	
     nuget pack $nuspec -Version $version -OutputDirectory ..\
 }
 
