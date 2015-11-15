@@ -77,8 +77,6 @@ Additional configuration details for the **ReflectSoftware.Insight.Extensions.Lo
 
 [Documentation](https://reflectsoftware.atlassian.net/wiki/display/RI5/ReflectInsight+5+documentation)
 
-[Knowledge Base](http://reflectsoftware.uservoice.com/knowledgebase)
-
 [Submit User Feedback](http://reflectsoftware.uservoice.com/forums/158277-reflectinsight-feedback)
 
 [Contact Support](support@reflectsoftware.com)
