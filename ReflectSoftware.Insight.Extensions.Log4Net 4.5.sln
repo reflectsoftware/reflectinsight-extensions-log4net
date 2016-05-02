@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectSoftware.Insight.Extensions.Log4net 4.5", "src\ReflectSoftware.Insight.Extensions.Log4net 4.5.csproj", "{2CFB2E87-1C47-4E78-ADDC-99F246471FC1}"
 EndProject
@@ -11,6 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solutio
 		CHANGES.md = CHANGES.md
 		LICENSE.md = LICENSE.md
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F4B1F5B9-2992-4AF1-B675-FDA0E1A1ACF5}"
+	ProjectSection(SolutionItems) = preProject
+		src\ReflectSoftware.Insight.Extensions.Log4net.nuspec = src\ReflectSoftware.Insight.Extensions.Log4net.nuspec
 	EndProjectSection
 EndProject
 Global
@@ -26,5 +31,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F4B1F5B9-2992-4AF1-B675-FDA0E1A1ACF5} = {5083DB16-D99D-48E4-8B72-90F9AFD54F7C}
 	EndGlobalSection
 EndGlobal

@@ -1,10 +1,12 @@
 # ReflectInsight-Extensions-Log4Net
 
 [![Build status](https://ci.appveyor.com/api/projects/status/github/reflectsoftware/reflectinsight-extensions-log4net?svg=true)](https://ci.appveyor.com/project/reflectsoftware/reflectinsight-extensions-log4net)
+[![License](https://img.shields.io/:license-MS--PL-blue.svg)](https://github.com/reflectsoftware/reflectinsight-extensions-log4net/license.md)
 [![Release](https://img.shields.io/github/release/reflectsoftware/reflectinsight-extensions-log4net.svg)](https://github.com/reflectsoftware/reflectinsight-extensions-log4net/releases/latest)
 [![NuGet Version](http://img.shields.io/nuget/v/reflectsoftware.insight.extensions.log4net.svg?style=flat)](http://www.nuget.org/packages/ReflectSoftware.Insight.Extensions.Log4Net/)
-[![NuGet](https://img.shields.io/nuget/dt/reflectsoftware.insight.extensions.log4net.svg)](http://www.nuget.org/packages/ReflectSoftware.Insight.Extensions.Log4net/)
 [![Stars](https://img.shields.io/github/stars/reflectsoftware/reflectinsight-extensions-log4net.svg)](https://github.com/reflectsoftware/reflectinsight-extensions-log4net/stargazers)
+
+**Package** - [ReflectSoftware.Insight.Extensions.Log4Net](http://www.nuget.org/packages/ReflectSoftware.Insight.Extensions.Log4Net/) | **Platforms** - .NET 4.5
 
 ## Overview ##
 
