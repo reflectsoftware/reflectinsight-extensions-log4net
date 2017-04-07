@@ -1,5 +1,8 @@
 ## Change Log ##
 
+#### Version 5.6.2 ####
+ * Updated to support latest log4net v2.0.8
+
 #### Version 5.6.1 ####
  * Updated to ReflectInsight v5.6.1.2
  * Updated to .NET 4.5.1
