@@ -19,15 +19,16 @@ using RI.Utils.ExceptionManagement;
 
 namespace ReflectSoftware.Insight.Extensions.Log4net
 {
-    ///------------------------------------------------------------------------
-    /// <summary>   Redirect all log4net messages to ReflectInsight. </summary>
-    /// <seealso cref="T:log4net.Appender.AppenderSkeleton"/>
-    ///------------------------------------------------------------------------
+    /// <summary>
+    /// Redirect all log4net messages to ReflectInsight.
+    /// </summary>
+    /// <seealso cref="log4net.Appender.AppenderSkeleton" />
+    /// <seealso cref="T:log4net.Appender.AppenderSkeleton" />
     public class LogAppender : AppenderSkeleton
     {
         class ActiveStates
         {
-            public ReflectInsight RI { get; set; }
+            public IReflectInsight RI { get; set; }
             public Boolean DisplayLevel { get; set; }
             public Boolean DisplayLocation { get; set; }
         }
@@ -40,16 +41,27 @@ namespace ReflectSoftware.Insight.Extensions.Log4net
         protected String DisplayLevel { get; set; }
         protected String DisplayLocation { get; set; }
 
-        ///--------------------------------------------------------------------
+
+        /// <summary>
+        /// Initializes the <see cref="LogAppender"/> class.
+        /// </summary>
+        /// <remarks>
+        /// Empty default constructor
+        /// </remarks>
         static LogAppender()
         {
             FLine = String.Format("{0,40}", String.Empty).Replace(" ", "-");
             FSendInternalErrorMethodInfo = typeof(ReflectInsight).GetMethod("SendInternalError", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.InvokeMethod);
         }
-        ///--------------------------------------------------------------------
-        /// <summary>   Initializes a new instance of the <see cref="LogAppender" /> class. </summary>        
-        /// <remarks>   Empty default constructor. </remarks>
-        ///--------------------------------------------------------------------
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LogAppender" /> class.
+        /// </summary>
+        /// <remarks>
+        /// Empty default constructor.
+        /// </remarks>
+        /// --------------------------------------------------------------------
+        /// --------------------------------------------------------------------
         public LogAppender()
         {
             InstanceName = String.Empty;
@@ -57,44 +69,62 @@ namespace ReflectSoftware.Insight.Extensions.Log4net
             DisplayLocation = String.Empty;
             CurrentActiveStates = new ActiveStates();
 
-            RIEventManager.OnServiceConfigChange += DoOnConfigChange;            
+            RIEventManager.OnServiceConfigChange += DoOnConfigChange;
         }
-        ///--------------------------------------------------------------------
+
+        /// <summary>
+        /// Raises the Close event.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// Releases any resources allocated within the appender such as file handles,
+        /// network connections, etc.
+        /// </para>
+        /// <para>
+        /// It is a programming error to append to a closed appender.
+        /// </para>
+        /// </remarks>
         protected override void OnClose()
         {
             RIEventManager.OnServiceConfigChange -= DoOnConfigChange;
             base.OnClose();
         }
-        ///--------------------------------------------------------------------
+
+        /// <summary>
+        /// Does the on configuration change.
+        /// </summary>
         private void DoOnConfigChange()
         {
             OnConfigChange();
         }
-        ///--------------------------------------------------------------------        
-        /// <summary>   Activates the options. </summary>
-        ///
+        /// <summary>
+        /// Activates the options.
+        /// </summary>
         /// <remarks>
         /// <para>
-        ///    This is part of the <see cref="T:log4net.Core.IOptionHandler" /> delayed object activation
-        ///    scheme. The <see cref="M:log4net.Appender.AppenderSkeleton.ActivateOptions" /> method must
-        ///    be called on this object after the configuration properties have been set. Until
-        ///    <see cref="M:log4net.Appender.AppenderSkeleton.ActivateOptions" /> is called this object
-        ///    is in an undefined state and must not be used.
-        ///    </para>
+        /// This is part of the <see cref="T:log4net.Core.IOptionHandler" /> delayed object activation
+        /// scheme. The <see cref="M:log4net.Appender.AppenderSkeleton.ActivateOptions" /> method must
+        /// be called on this object after the configuration properties have been set. Until
+        /// <see cref="M:log4net.Appender.AppenderSkeleton.ActivateOptions" /> is called this object
+        /// is in an undefined state and must not be used.
+        /// </para>
         /// <para>
-        ///    If any of the configuration properties are modified then
-        ///    <see cref="M:log4net.Appender.AppenderSkeleton.ActivateOptions" /> must be called again.
-        ///    </para>
+        /// If any of the configuration properties are modified then
+        /// <see cref="M:log4net.Appender.AppenderSkeleton.ActivateOptions" /> must be called again.
+        /// </para>
         /// </remarks>
-        ///
-        /// <seealso cref="M:log4net.Appender.AppenderSkeleton.ActivateOptions()"/>
-        ///--------------------------------------------------------------------
+        /// --------------------------------------------------------------------
+        /// <seealso cref="M:log4net.Appender.AppenderSkeleton.ActivateOptions()" />
+        /// --------------------------------------------------------------------
         public override void ActivateOptions()
         {
             base.ActivateOptions();
             OnConfigChange();
         }
-        ///--------------------------------------------------------------------
+
+        /// <summary>
+        /// Called when [configuration change].
+        /// </summary>
         private void OnConfigChange()
         {
             try
@@ -104,7 +134,7 @@ namespace ReflectSoftware.Insight.Extensions.Log4net
                     ActiveStates states = new ActiveStates();
                     states.RI = RILogManager.Get(InstanceName) ?? RILogManager.Default;
                     states.DisplayLevel = String.Compare(DisplayLevel.ToLower().Trim(), "true", false) == 0;
-                    states.DisplayLocation = String.Compare(DisplayLocation.ToLower().Trim() , "true", false) == 0;
+                    states.DisplayLocation = String.Compare(DisplayLocation.ToLower().Trim(), "true", false) == 0;
 
                     CurrentActiveStates = states;
                 }
@@ -114,12 +144,25 @@ namespace ReflectSoftware.Insight.Extensions.Log4net
                 RIExceptionManager.Publish(ex, "Failed during: LogAppender.OnConfigChange()");
             }
         }
-        ///--------------------------------------------------------------------
-        static private Boolean SendInternalError(ReflectInsight ri, MessageType mType, Exception ex)
+
+        /// <summary>
+        /// Sends the internal error.
+        /// </summary>
+        /// <param name="ri">The ri.</param>
+        /// <param name="mType">Type of the m.</param>
+        /// <param name="ex">The ex.</param>
+        /// <returns></returns>
+        static private Boolean SendInternalError(IReflectInsight ri, MessageType mType, Exception ex)
         {
             return (Boolean)FSendInternalErrorMethodInfo.Invoke(ri, new object[] { mType, ex });
         }
-        ///-------------------------------------------------------------------- 
+
+        /// <summary>
+        /// Sends the message.
+        /// </summary>
+        /// <param name="states">The states.</param>
+        /// <param name="mType">Type of the m.</param>
+        /// <param name="loggingEvent">The logging event.</param>
         static private void SendMessage(ActiveStates states, MessageType mType, LoggingEvent loggingEvent)
         {
             try
@@ -163,7 +206,25 @@ namespace ReflectSoftware.Insight.Extensions.Log4net
                 if (!SendInternalError(states.RI, mType, ex)) throw;
             }
         }
-        ///-------------------------------------------------------------------- 
+
+        /// <summary>
+        /// Subclasses of <see cref="T:log4net.Appender.AppenderSkeleton" /> should implement this method
+        /// to perform actual logging.
+        /// </summary>
+        /// <param name="loggingEvent">The event to append.</param>
+        /// <remarks>
+        /// <para>
+        /// A subclass must implement this method to perform
+        /// logging of the <paramref name="loggingEvent" />.
+        /// </para>
+        /// <para>This method will be called by <see cref="M:DoAppend(LoggingEvent)" />
+        /// if all the conditions listed for that method are met.
+        /// </para>
+        /// <para>
+        /// To restrict the logging of events in the appender
+        /// override the <see cref="M:PreAppendCheck()" /> method.
+        /// </para>
+        /// </remarks>
         protected override void Append(LoggingEvent loggingEvent)
         {
             ActiveStates states = CurrentActiveStates;
@@ -186,7 +247,7 @@ namespace ReflectSoftware.Insight.Extensions.Log4net
             }
             else if (loggingEvent.Level == Level.Trace)
             {
-                mType = MessageType.SendTrace;                
+                mType = MessageType.SendTrace;
             }
             else if (loggingEvent.Level == Level.Debug
                  || loggingEvent.Level == Level.Log4Net_Debug)
@@ -207,11 +268,11 @@ namespace ReflectSoftware.Insight.Extensions.Log4net
             else if (loggingEvent.Level == Level.Fatal
                  || loggingEvent.Level == Level.Critical)
             {
-                mType = MessageType.SendFatal;                
+                mType = MessageType.SendFatal;
             }
             else if (loggingEvent.Level == Level.Notice)
             {
-                mType = MessageType.SendNote;                
+                mType = MessageType.SendNote;
             }
             else if (loggingEvent.Level == Level.Verbose)
             {
@@ -220,7 +281,20 @@ namespace ReflectSoftware.Insight.Extensions.Log4net
 
             SendMessage(states, mType, loggingEvent);
         }
-        ///-------------------------------------------------------------------- 
+
+        /// <summary>
+        /// Tests if this appender requires a <see cref="P:log4net.Appender.AppenderSkeleton.Layout" /> to be set.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// In the rather exceptional case, where the appender
+        /// implementation admits a layout but can also work without it,
+        /// then the appender should return <c>true</c>.
+        /// </para>
+        /// <para>
+        /// This default implementation always returns <c>false</c>.
+        /// </para>
+        /// </remarks>
         protected override bool RequiresLayout
         {
             get { return false; }

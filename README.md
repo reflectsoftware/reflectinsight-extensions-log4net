@@ -12,7 +12,7 @@
 
 We've added support for the Log4net appender. This allows you to leverage your current investment in log4net, but leverage the power and flexibility that comes with the ReflectInsight viewer. You can view your log4net messages in realtime, in a rich viewer that allows you to filter out and search for what really matters to you.
 
- The log4net extension supports Log4net v1.2.11.0. However if you need to support an older version, then you will need to download the ReflectInsight Logging Extensions Library from GitHub. You can then reference and rebuild the extension against a specific release of the log4net dll.
+ The log4net extension supports Log4net v2.0.8. However if you need to support an older version, then you will need to download the ReflectInsight Logging Extensions Library from GitHub. You can then reference and rebuild the extension against a specific release of the log4net dll.
 
 ## Benefits of ReflectInsight Extensions ##
 
