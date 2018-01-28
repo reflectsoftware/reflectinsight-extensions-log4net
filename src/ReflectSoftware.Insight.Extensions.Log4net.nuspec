@@ -19,7 +19,7 @@ http://www.ReflectSoftware.com/Public/Download.aspx
 You can view your log4net messages in realtime, in a rich viewer that allows you to filter out and search for what really matters to you.</description>
         <summary>ReflectInsight Log4net logging extention makes it easy to integrate ReflectInsight into your existing application logging infrastructure and leverage the power of the ReflectInsight log viewer.</summary>
         <releaseNotes></releaseNotes>
-        <copyright>© 2017 ReflectSoftware Inc.</copyright>
+        <copyright>© 2018 ReflectSoftware Inc.</copyright>
         <tags>reflectinsight logging log logfiles events log4net exception handling structured tracing trace debug diagnostic</tags>
         <dependencies>
             <dependency id="log4net" version="2.0.8" />
