@@ -70,7 +70,7 @@ To get started with the Log4net Extension, please do the following:
 Additional Resources
 
 Getting started with the Log4net configuration
-https://insightextensions.codeplex.com/wikipage?title=Getting%20Started%20with%20Log4net%20Extension&referringTitle=Documentation
+https://reflectsoftware.atlassian.net/wiki/spaces/RI5/pages/5570582/Log4net+Extension
 
 Knowledge Base
 http://reflectsoftware.uservoice.com/knowledgebase
